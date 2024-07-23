@@ -3,5 +3,5 @@ go 1.21.4
 
 use (
 	.
-	gitbeam-baselib
+	gitbeam.baselib
 )

@@ -3,8 +3,7 @@ package core
 import (
 	"context"
 	"encoding/json"
-	"gitbeam/mocks"
-	"gitbeam/models"
+	"gitbeam.repo.manager/models"
 	"github.com/golang/mock/gomock"
 	"github.com/sirupsen/logrus"
 	"github.com/stretchr/testify/assert"

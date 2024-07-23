@@ -23,7 +23,6 @@ func main() {
 	logger.SetLevel(logrus.InfoLevel)
 
 	secrets := config.GetSecrets()
-	address := fmt.Sprintf("0.0.0.0:%s", secrets.Port)
 
 	//Using SQLite as the mini persistent storage.
 	//( in a real world system, this would be any production level or vendor managed db )
@@ -39,6 +38,7 @@ func main() {
 	//Clarity is better here for this exercise.
 	coreService := core.NewGitBeamService(logger, eventStore, dataStore, nil)
 
+	address := fmt.Sprintf("0.0.0.0:%s", secrets.Port)
 	logger.Printf("[*] %s listening on address: %s", config.ServiceName, address)
 	server.ExecGRPCServer(address, coreService, logger)
 }
